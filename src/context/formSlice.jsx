@@ -6,6 +6,7 @@ const formSlice = createSlice({
   initialState: {
     currentStep: 1,
     infor: infor,
+    contextForm: null,
   },
   reducers: {
     nextStep: (state) => {
@@ -14,8 +15,11 @@ const formSlice = createSlice({
     previousStep: (state) => {
       state.currentStep -= 1;
     },
+    updateContextForm: (state, action) => {
+      state.contextForm = action.payload;
+    },
   },
 });
 
 export default formSlice.reducer;
-export const { nextStep, previousStep } = formSlice.actions;
+export const { nextStep, previousStep, updateContextForm } = formSlice.actions;

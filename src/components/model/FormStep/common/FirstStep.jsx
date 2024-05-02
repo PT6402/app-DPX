@@ -2,7 +2,7 @@ import { QRCodeCanvas } from "qrcode.react";
 import { useParams } from "react-router-dom";
 export default function FirstStep() {
   const { id } = useParams();
-  const urlID = `http://localhost:3000/ctb_dt/${id}`;
+  const urlID = `http://192.168.1.10:3000/ctb_dt/${id}`;
   const phone = "0971866177";
   const handleGenericImage = () => {
     const canvas = document.createElement("canvas");

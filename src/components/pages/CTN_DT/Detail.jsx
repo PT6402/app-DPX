@@ -2,17 +2,17 @@ import { Link, useParams } from "react-router-dom";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { QRCodeCanvas } from "qrcode.react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { FaCheck } from "react-icons/fa6";
 import {
   getBlobFromImageElement,
   copyBlobToClipboard,
 } from "copy-image-clipboard";
 import CopyClipBoard from "./icon/CopyClipBoard";
-import useExcel from "../../../hooks/useExcel";
+import useAppScript from "../../../hooks/useAppScript";
 export default function Detail() {
-  const { handleDone } = useExcel();
-  const { id, phone } = useParams();
-  const urlID = `http://localhost:3000/ctb_dt/${id}`;
+  const { id, phone, name } = useParams();
+  console.log(typeof phone, phone);
+  const { add } = useAppScript();
+  const urlID = `http://192.168.1.10:3000/user/${id}`;
   const handleDownload = () => {
     var imageElement = document.getElementById("my-qrcode");
     getBlobFromImageElement(imageElement)
@@ -33,7 +33,9 @@ export default function Detail() {
     ctx.fillText(phone, 0, 40);
     return canvas.toDataURL();
   };
-
+  const handleAddUser = () => {
+    add({ id, phone, name });
+  };
   return (
     <section className="text-gray-600 body-font">
       <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
@@ -49,7 +51,7 @@ export default function Detail() {
               imageSettings={{
                 src: handleGenericImage(),
                 x: 43,
-                y: 230,
+                y: 238,
                 height: 150,
                 width: 180,
                 excavate: true,
@@ -97,12 +99,12 @@ export default function Detail() {
             >
               <IoArrowBackCircleOutline />| Back
             </Link>
-            {/* <button
+            <button
               className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg items-center justify-between1"
-              onClick={() => handleDone()}
+              onClick={handleAddUser}
             >
-              <FaCheck />
-            </button> */}
+              Done
+            </button>
           </div>
         </div>
       </div>

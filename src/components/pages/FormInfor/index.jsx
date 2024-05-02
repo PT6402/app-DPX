@@ -2,8 +2,13 @@
 import { useSelector } from "react-redux";
 
 import { useEffect, useState } from "react";
+import LoginForm from "./LoginForm";
+import { useParams } from "react-router-dom";
 
 export default function FormInfor() {
+  const { id } = useParams();
+  console.log(id);
+  const { infoUser } = useSelector((state) => state.userSlice);
   const { currentStep, infor } = useSelector((state) => state.formSlice);
   const formSlice = useSelector((state) => state.formSlice);
   const [uiStep, setUIStep] = useState(null);
@@ -18,13 +23,18 @@ export default function FormInfor() {
   useEffect(() => {
     changeUIStep();
   }, [formSlice.currentStep]);
-  return (
-    <div>
-      <div className="max-w-3xl mx-auto px-4 ">
-        <div>
-          <div className="">{uiStep}</div>
+
+  if (infoUser) {
+    return (
+      <div>
+        <div className="max-w-3xl mx-auto px-4 ">
+          <div>
+            <div className="">{uiStep}</div>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <LoginForm id={id} />;
+  }
 }

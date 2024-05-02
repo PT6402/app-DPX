@@ -13,7 +13,10 @@ export default function ItemUser({ dataItem }) {
   return (
     <>
       {dataToId && (
-        <Link className="p-2 lg:w-1/3 md:w-1/2 w-full" to={`${dataToId}/${dataItem?.phone}`}>
+        <Link
+          className="p-2 lg:w-1/3 md:w-1/2 w-full"
+          to={`${dataToId}/${dataItem?.phone}/${dataItem?.name}`}
+        >
           <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
             <img
               alt="team"

@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/ctn_dt" element={<CTN_DT />} />
-          <Route path="/ctn_dt/:id/:phone" element={<Detail />} />
+          <Route path="/ctn_dt/:id/:phone/:name" element={<Detail />} />
           <Route path="/vip" element={<VIP />} />
           <Route path="/user/:id" element={<FormInfor />} />
         </Route>

@@ -25,7 +25,21 @@ export default function Header() {
       <div className="container px-5  mx-auto flex items-center md:flex-row flex-col">
         <div className="flex flex-col md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto md:text-left text-center">
           <h1 className="md:text-3xl text-2xl font-medium title-font text-gray-900">
-            {/* {dataExcel.data && "Master Cleanse Reliac Heirloom"} */}
+            <div className="sm:inline-flex sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 w-full">
+              <label
+                htmlFor="inline-input-label-with-helper-text"
+                className="block text-sm font-medium dark:text-white whitespace-nowrap"
+              >
+                Đạo Tràng
+              </label>
+              <input
+                type="email"
+                id="inline-input-label-with-helper-text"
+                className="max-w-xs py-3 px-4 block w-full border-gray-200 rounded-lg text-2xl focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600 "
+                // placeholder="you@site.com"
+                aria-describedby="hs-inline-input-helper-text"
+              />
+            </div>
           </h1>
         </div>
         <div className="overflow-hidden flex md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-4 relative">
