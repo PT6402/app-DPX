@@ -9,7 +9,7 @@ const useExcel = () => {
     let reader = new FileReader();
     reader.readAsArrayBuffer(file);
     reader.onload = (e) => {
-      const workboot = XLSX.readFile(e.target.result, { type: "buffer" });
+      const workboot = XLSX.readFile(e.target.result);
       const worksheetName = workboot.SheetNames[0];
       const worksheet = workboot.Sheets[worksheetName];
       const data = XLSX.utils.sheet_to_json(worksheet);

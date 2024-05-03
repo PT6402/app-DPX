@@ -1,20 +1,34 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Layout from "./components/layout";
-import CTN_DT from "./components/pages/CTN_DT";
-import VIP from "./components/pages/VIP";
-import Detail from "./components/pages/CTN_DT/Detail";
-import FormInfor from "./components/pages/FormInfor";
+import Layout from "components/layout";
+import {
+  AddAdminPage,
+  Ctn_dtPage,
+  DetailPage,
+  FormInforPage,
+  LoginPage,
+  NotFoundPage,
+  VipPage,
+} from "components/pages";
+import ProtectedRoute from "routes/ProtectedRoute";
 
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/ctn_dt" element={<CTN_DT />} />
-          <Route path="/ctn_dt/:id/:phone/:name" element={<Detail />} />
-          <Route path="/vip" element={<VIP />} />
-          <Route path="/user/:id" element={<FormInfor />} />
+          <Route index element={<LoginPage />} />
+          <Route element={<ProtectedRoute needAdmin />}>
+            <Route index path="/ctn_dt" element={<Ctn_dtPage />} />
+            <Route path="/ctn_dt/:id/:phone/:name" element={<DetailPage />} />
+            <Route path="/vip" element={<VipPage />} />
+          </Route>
+          <Route element={<ProtectedRoute needSuperAdmin />}>
+            <Route path="/add_admin" element={<AddAdminPage />} />
+          </Route>
+          <Route path="/user/:id" element={<FormInforPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </>

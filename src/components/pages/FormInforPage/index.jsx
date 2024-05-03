@@ -5,9 +5,8 @@ import { useEffect, useState } from "react";
 import LoginForm from "./LoginForm";
 import { useParams } from "react-router-dom";
 
-export default function FormInfor() {
+export default function FormInforPage() {
   const { id } = useParams();
-  console.log(id);
   const { infoUser } = useSelector((state) => state.userSlice);
   const { currentStep, infor } = useSelector((state) => state.formSlice);
   const formSlice = useSelector((state) => state.formSlice);

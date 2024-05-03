@@ -2,19 +2,19 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { updateInfo } from "../context/userSlice";
 import { useState } from "react";
-
+import { toast } from "react-toastify";
 const useAppScript = () => {
+  const url_app = import.meta.env.VITE_URL_APP;
   const [isLoading, setIsLoadding] = useState();
   const [isError, setIsError] = useState();
   const dispatch = useDispatch();
   const { contextForm } = useSelector((state) => state.formSlice);
-  const urlServer =
-    "https://script.google.com/macros/s/AKfycbwinG3i46ppq8Xps5WAcnLOxEixxvY2IX8m4eJemDRKzEh1_uLkRfiZHjaK78OoQ7HCGg/exec";
+  const urlServer = import.meta.env.VITE_APP_SCRIPT;
   const login = async (id, phone) => {
     setIsLoadding(true);
     setIsError(null);
     try {
-      const urlID = `http://192.168.1.10:3000/user/${id}`;
+      const urlID = `${url_app}user/${id}`;
       const res = await axios.get(
         `${urlServer}?action=login&id=${urlID}&phone=${phone}`
       );
@@ -23,20 +23,36 @@ const useAppScript = () => {
       } else {
         setIsError(res.data.message);
       }
+      return res.data;
     } catch (error) {
       console.log(error);
     } finally {
       setIsLoadding(false);
     }
   };
-  const add = async ({ id, name, phone }) => {
-    const urlID = `http://192.168.1.10:3000/user/${id}`;
-    console.log(typeof phone);
-    const res = await axios.get(
-      `${urlServer}?action=add&name=${name}&id=${urlID}&phone=${String(phone)}`
-    );
-
-    console.log(res.data.status);
+  const addUser = async ({ id, name, phone, type }) => {
+    setIsLoadding(true);
+    setIsError(null);
+    try {
+      const urlID = `${url_app}user/${id}`;
+      const res = await axios.get(
+        `${urlServer}?action=addUser&name=${name}&id=${urlID}&phone=${phone}&role=user&type=${type}`
+      );
+      if (res.data.status == 204) {
+        toast.error(res.data.message, {
+          position: "top-right",
+        });
+      }
+      if (res.data.status == 200) {
+        toast.success(res.data.message, {
+          position: "top-right",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoadding(false);
+    }
   };
   const addApp = async ({ id, name, phone }) => {
     setIsLoadding(true);
@@ -50,6 +66,11 @@ const useAppScript = () => {
       formData.append("name_tai_xe", contextForm?.name_tai_xe);
       formData.append("phone_tai_xe", contextForm?.phone_tai_xe);
       const res = await axios.post(urlServer, formData);
+      if (res.data.status == 200) {
+        toast.success(res.data.message, {
+          position: "top-right",
+        });
+      }
       return res.data;
     } catch (error) {
       console.log(error);
@@ -57,6 +78,7 @@ const useAppScript = () => {
       setIsLoadding(false);
     }
   };
-  return { login, add, addApp, isLoading, isError };
+
+  return { login, addUser, addApp, isLoading, isError };
 };
 export default useAppScript;

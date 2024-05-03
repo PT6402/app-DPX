@@ -5,6 +5,7 @@ const excelSlice = createSlice({
   initialState: {
     data: null,
     worksheet: null,
+    type: null,
   },
   reducers: {
     addData: (state, action) => {
@@ -13,8 +14,16 @@ const excelSlice = createSlice({
     addWorkShhet: (state, action) => {
       state.worksheet = action.payload;
     },
+    updateType: (state, action) => {
+      state.type = action.payload;
+    },
+    clear: (state) => {
+      state.data = null;
+      state.worksheet = null;
+      state.type = null;
+    },
   },
 });
 
 export default excelSlice.reducer;
-export const { addData, addWorkShhet } = excelSlice.actions;
+export const { addData, addWorkShhet, updateType, clear } = excelSlice.actions;

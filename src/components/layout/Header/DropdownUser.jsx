@@ -1,12 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { IconArrowDown, IconLogout } from "./icon";
+import { useSelector } from "react-redux";
+import useAdmin from "hooks/useAdmin";
 
 export default function DropdownUser() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const trigger = useRef(null);
   const dropdown = useRef(null);
-
+  const { infoUser } = useSelector((state) => state.userSlice);
+  const { logoutAdmin } = useAdmin();
   // close on click outside
   useEffect(() => {
     const clickHandler = ({ target }) => {
@@ -42,8 +45,8 @@ export default function DropdownUser() {
         to="#"
       >
         <span className="text-right lg:block">
-          <span className="block text-sm font-medium text-black dark:text-white">
-            Thomas Anree
+          <span className="block text-2xl font-medium text-black dark:text-white">
+            {infoUser?.Name}
           </span>
         </span>
         <IconArrowDown />
@@ -54,11 +57,14 @@ export default function DropdownUser() {
         ref={dropdown}
         onFocus={() => setDropdownOpen(true)}
         onBlur={() => setDropdownOpen(false)}
-        className={`absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark ${
+        className={`absolute right-0 mt-5 flex w-62.5 flex-col rounded-xl border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark ${
           dropdownOpen === true ? "block" : "hidden"
         }`}
       >
-        <button className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+        <button
+          className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base  "
+          onClick={logoutAdmin}
+        >
           <IconLogout />
           Log Out
         </button>

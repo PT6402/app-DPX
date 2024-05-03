@@ -18,6 +18,7 @@ export default defineConfig({
       helpers: path.resolve("src/helpers/"),
       hooks: path.resolve("src/hooks/"),
       data: path.resolve("src/data/"),
+      routes: path.resolve("src/routes/"),
     },
   },
   css: {

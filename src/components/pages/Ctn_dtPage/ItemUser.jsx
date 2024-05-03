@@ -9,7 +9,6 @@ export default function ItemUser({ dataItem }) {
   useEffect(() => {
     setDataToId(handHash(dataItem?.name + dataItem?.phone));
   }, []);
-  console.log(dataToId);
   return (
     <>
       {dataToId && (

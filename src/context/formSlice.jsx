@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import infor from "../components/pages/FormInfor/Setup";
+import infor from "components/pages/FormInforPage/Setup";
 
 const formSlice = createSlice({
   name: "formSlice",
