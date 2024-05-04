@@ -18,8 +18,14 @@ const formSlice = createSlice({
     updateContextForm: (state, action) => {
       state.contextForm = action.payload;
     },
+    clearForm: (state) => {
+      state.currentStep = 1;
+      state.infor = infor;
+      state.contextForm = null;
+    },
   },
 });
 
 export default formSlice.reducer;
-export const { nextStep, previousStep, updateContextForm } = formSlice.actions;
+export const { nextStep, previousStep, updateContextForm, clearForm } =
+  formSlice.actions;

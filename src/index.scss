@@ -17,4 +17,16 @@ input::-ms-clear {
     display: none;
 }
 
+.select__input {
+    box-shadow: none !important;
+}
+
+.select__indicator-separator {
+    display: none
+}
+
+.select__control--is-disabled {
+    background-color: rgba(187, 187, 187, 0.566) !important;
+}
+
 // 

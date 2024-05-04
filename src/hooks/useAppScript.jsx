@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateInfo } from "../context/userSlice";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { setIsLoadding as loadingApp } from "context/loadingSlice";
 const useAppScript = () => {
   const url_app = import.meta.env.VITE_URL_APP;
   const [isLoading, setIsLoadding] = useState();
@@ -33,6 +34,7 @@ const useAppScript = () => {
   const addUser = async ({ id, name, phone, type }) => {
     setIsLoadding(true);
     setIsError(null);
+    dispatch(loadingApp(true));
     try {
       const urlID = `${url_app}user/${id}`;
       const res = await axios.get(
@@ -52,11 +54,13 @@ const useAppScript = () => {
       console.log(error);
     } finally {
       setIsLoadding(false);
+      dispatch(loadingApp(false));
     }
   };
   const addApp = async ({ id, name, phone }) => {
     setIsLoadding(true);
     setIsError(null);
+    dispatch(loadingApp(true));
     try {
       const formData = new FormData();
       formData.append("action", "addApp");
@@ -66,19 +70,45 @@ const useAppScript = () => {
       formData.append("name_tai_xe", contextForm?.name_tai_xe);
       formData.append("phone_tai_xe", contextForm?.phone_tai_xe);
       const res = await axios.post(urlServer, formData);
-      if (res.data.status == 200) {
-        toast.success(res.data.message, {
-          position: "top-right",
-        });
-      }
+      // if (res.data.status == 200) {
+      //   toast.success(res.data.message, {
+      //     position: "top-right",
+      //   });
+      // }
       return res.data;
     } catch (error) {
       console.log(error);
     } finally {
       setIsLoadding(false);
+      dispatch(loadingApp(false));
     }
   };
 
-  return { login, addUser, addApp, isLoading, isError };
+  const addVip = async ({ name, phone, type, urlID, licensePlateInput }) => {
+    dispatch(loadingApp(true));
+    setIsError(null);
+    try {
+      const addLogin = await axios.get(
+        `${urlServer}?action=addUser&name=${name}&id=${urlID}&phone=${phone}&role=user&type=${type}`
+      );
+      if (addLogin.data.status == 200) {
+        const formData = new FormData();
+        formData.append("action", "addApp");
+        formData.append("id", `'${urlID}`);
+        formData.append("phone", phone);
+        formData.append("name", name);
+        formData.append("phone_tai_xe", 0);
+        formData.append("bien_xo", licensePlateInput);
+        await axios.post(urlServer, formData);
+      }
+      return addLogin.data;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      dispatch(loadingApp(false));
+    }
+  };
+
+  return { login, addUser, addApp, addVip, isLoading, isError };
 };
 export default useAppScript;

@@ -3,14 +3,15 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { nextStep } from "../../../../context/formSlice";
 import useAppScript from "../../../../hooks/useAppScript";
-import Spinner from "../icon/spinner";
+import { setOpenDialog } from "context/dialogSlice";
+import CheckoutContent from "components/pages/FormInforPage/CheckoutContent";
 
 /* eslint-disable react/prop-types */
 export default function Next_Submit() {
   const dispatch = useDispatch();
   const { infoUser } = useSelector((state) => state.userSlice);
   const { currentStep, infor } = useSelector((state) => state.formSlice);
-  const { addApp, isLoading } = useAppScript();
+  const { addApp } = useAppScript();
   const [status, setStatus] = useState({
     content: "Next",
     style: "blue",
@@ -39,6 +40,23 @@ export default function Next_Submit() {
       dispatch(nextStep());
     }
   };
+  const handleAddApp = () => {
+    addApp({
+      id: infoUser.ID,
+      name: infoUser.Name,
+      phone: infoUser.Phone,
+    }).then((res) => {
+      if (res.status == 200) {
+        dispatch(
+          setOpenDialog({
+            isOpen: true,
+            content: CheckoutContent,
+            data: { message: res.message },
+          })
+        );
+      }
+    });
+  };
   return (
     <>
       {infor?.lastStep && (
@@ -48,22 +66,11 @@ export default function Next_Submit() {
             className={`w-35 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm  text-white  hover:bg-${status.style}-600  bg-${status.style}-500 inline-flex justify-center items-center`}
             onClick={() => {
               if (status.content == "Lưu") {
-                addApp({
-                  id: infoUser.ID,
-                  name: infoUser.Name,
-                  phone: infoUser.Phone,
-                });
+                handleAddApp();
               }
             }}
           >
-            {!isLoading ? (
-              status.content
-            ) : (
-              <>
-                <Spinner />
-                Loading...
-              </>
-            )}
+            {status.content}
           </button>
         </div>
       )}

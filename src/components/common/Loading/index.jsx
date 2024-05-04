@@ -1,7 +1,7 @@
 export default function Loading() {
   return (
     <>
-      <div className="absolute bg-white bg-opacity-70 z-10 h-full w-full flex items-center justify-center">
+      <div className="absolute bg-white bg-opacity-70 z-999999 h-full w-full flex items-center justify-center  rounded-xl scale-y-95">
         <div className="flex items-center">
           <span className="text-3xl mr-4">Loading</span>
           <svg

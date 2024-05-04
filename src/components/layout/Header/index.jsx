@@ -1,10 +1,26 @@
 /* eslint-disable react/prop-types */
+import { Link, useLocation } from "react-router-dom";
 import DropdownUser from "./DropdownUser";
+import { IoArrowBackCircleOutline } from "react-icons/io5";
 
 const Header = ({ sidebarOpen, setSidebarOpen }) => {
+  const { pathname } = useLocation();
+  const urlCheck = pathname.split("/");
   return (
     <header className="sticky top-4 rounded-xl z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none  scale-95">
-      <div className="flex flex-grow items-center justify-end px-4 py-4 shadow-3 md:px-6 2xl:px-11 gap-3  rounded-xl">
+      <div
+        className={`flex flex-grow items-center justify-${
+          urlCheck.length >= 3 ? "between" : "end"
+        } px-4 py-4 shadow-3 md:px-6 2xl:px-11 gap-3  rounded-xl`}
+      >
+        {urlCheck.length >= 3 && (
+          <Link
+            to={"/ctn_dt"}
+            className="inline-flex text-graydark  outline-graydark outline-1 border-0 py-2 px-6  hover:scale-105 hover:outline rounded-xl text-lg items-center justify-between"
+          >
+            <IoArrowBackCircleOutline size={35} />
+          </Link>
+        )}
         <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
           {/* <!-- Hamburger Toggle BTN --> */}
           <button
@@ -49,7 +65,6 @@ const Header = ({ sidebarOpen, setSidebarOpen }) => {
           </button>
           {/* <!-- Hamburger Toggle BTN --> */}
         </div>
-
         <div className="flex items-center gap-3 2xsm:gap-7">
           <DropdownUser />
         </div>

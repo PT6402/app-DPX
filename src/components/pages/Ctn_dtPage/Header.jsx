@@ -1,12 +1,17 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { TbFileImport } from "react-icons/tb";
 import useExcel from "../../../hooks/useExcel";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { updateType } from "context/excelSlice";
+import { useEffect, useRef, useState } from "react";
+import { clear, updateType } from "context/excelSlice";
+import { SelectComponent } from "components/common";
+import { optionDT_CTN } from "./dataSelect";
+
 export default function Header() {
+  const selectRef = useRef();
   const { readerFileExcel } = useExcel();
   const { type, data } = useSelector((state) => state.excelSlice);
-  const [typeUser, setType] = useState(type || "");
+  const [value, setValue] = useState(type);
   const dispatch = useDispatch();
   const handleImportFile = (e) => {
     let fileType = [
@@ -24,57 +29,69 @@ export default function Header() {
       console.log("error");
     }
   };
-  const handleSetType = () => {
-    dispatch(updateType(typeUser));
+
+  const getValueSelect = (value) => {
+    setValue(value);
   };
   useEffect(() => {
-    if (type == null) {
-      setType("");
+    if (value != null) {
+      dispatch(updateType(value));
     }
-  }, [data]);
-
+  }, [value]);
   return (
     <section className="text-gray-600 body-font">
-      <div className="container px-5  mx-auto flex items-center md:flex-row flex-col">
+      <div className=" px-5 pl-1  mx-auto flex items-center md:flex-row flex-col">
         <div className="flex flex-col md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto md:text-left text-center">
           <h1 className="md:text-3xl text-2xl font-medium title-font text-gray-900">
             <div className="sm:inline-flex sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 w-full">
-              <label
-                htmlFor="inline-input-label-with-helper-text"
-                className="block text-xl font-medium dark:text-white whitespace-nowrap"
-              >
-                ĐT/CTN
-              </label>
-              <input
-                type="email"
-                id="inline-input-label-with-helper-text"
-                className="max-w-xs py-3 px-4 block w-full border-gray-200 rounded-lg text-2xl focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600 "
-                // placeholder="you@site.com"
-                aria-describedby="hs-inline-input-helper-text"
-                value={typeUser}
-                onChange={(e) => setType(e.target.value)}
+              <SelectComponent
+                options={optionDT_CTN}
+                getValueSelect={getValueSelect}
+                selectRef={selectRef}
+                value={value}
+                placeholder={"CTN|DT|VIP"}
+                isDisabled={value != null}
               />
-              <button
-                type="submit"
-                className="mt-4 bg-blue-500 text-white py-2 px-6 rounded-md hover:bg-blue-600 text-xl"
-                onClick={handleSetType}
-              >
-                Save
-              </button>
+
+              {value != null && (
+                <button
+                  type="submit"
+                  className="mt-4 bg-red-500 text-white py-2 px-6 rounded-md hover:bg-red-600 text-xl"
+                  onClick={() => {
+                    setValue(null);
+                    dispatch(clear());
+                  }}
+                >
+                  Clear
+                </button>
+              )}
             </div>
           </h1>
         </div>
         <div className="overflow-hidden flex md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-4 relative">
           <button
             className={`bg-${
-              type == null || type == "" ? "gray" : "green"
-            }-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-${
-              type == null || type == "" ? "gray" : "green"
-            }-200 focus:outline-none border-2 cursor-pointer`}
+              type == null || type == "" || data != null ? "gray" : "indigo"
+            }-500 inline-flex py-3 px-5 rounded-lg items-center hover:bg-${
+              type == null || type == "" || data != null ? "gray" : "indigo"
+            }-500 focus:outline-none border-2 cursor-pointer `}
           >
-            <span className=" flex items-start  leading-none gap-2 cursor-pointer">
-              <TbFileImport />
-              <span className="title-font font-medium">Import file</span>
+            <span className=" flex items-center justify-center  leading-none gap-2 cursor-pointer">
+              <TbFileImport
+                color={
+                  type == null || type == "" || data != null ? "" : "white"
+                }
+                size={20}
+              />
+              <span
+                className={`title-font font-medium ${
+                  type == null || type == "" || data != null
+                    ? ""
+                    : "text-white font-bold"
+                }`}
+              >
+                Import file
+              </span>
             </span>
           </button>
           <input

@@ -16,3 +16,11 @@ input::-ms-reveal,
 input::-ms-clear {
     display: none;
 }
+.Select-input > input {
+  color: transparent;
+  text-shadow: 0 0 0 #2196f3;
+ }
+
+.Select-input > input:focus {
+ outline: none;
+}

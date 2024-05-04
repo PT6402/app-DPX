@@ -5,7 +5,7 @@ import { logout, updateInfo } from "context/userSlice";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-
+import { setIsLoadding as loadingApp } from "context/loadingSlice";
 const useAdmin = () => {
   const [isLoading, setIsLoading] = useState();
   const [isError, setIsError] = useState();
@@ -45,10 +45,11 @@ const useAdmin = () => {
   const addAdmin = async ({ name, phone, email }) => {
     setIsLoading(true);
     setIsError(null);
+    dispatch(loadingApp(true));
     const id = handHash(`${email}${phone}`);
     try {
       const res = await axios.get(
-        `${urlServer}?action=addUser&name=${name}&id='${id}&phone=${phone}&role=admin&type=Center`
+        `${urlServer}?action=addUser&name=${name}&id=${id}&phone=${phone}&role=admin&type=Center`
       );
       if (res.data.status == 204) {
         toast.error(res.data.message, {
@@ -64,6 +65,7 @@ const useAdmin = () => {
       console.log(error);
     } finally {
       setIsLoading(false);
+      dispatch(loadingApp(false));
     }
   };
   return { loginAdmin, logoutAdmin, addAdmin, isLoading, isError };

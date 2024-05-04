@@ -1,12 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { useEffect, useState } from "react";
-import LoginForm from "./LoginForm";
 import { useParams } from "react-router-dom";
+import { setOpenDialog } from "context/dialogSlice";
+import LoginContent from "./LoginContent";
 
 export default function FormInforPage() {
   const { id } = useParams();
+  const dialog = useSelector((state) => state.dialogSlice);
+  const dispatch = useDispatch();
   const { infoUser } = useSelector((state) => state.userSlice);
   const { currentStep, infor } = useSelector((state) => state.formSlice);
   const formSlice = useSelector((state) => state.formSlice);
@@ -20,9 +23,15 @@ export default function FormInforPage() {
   };
 
   useEffect(() => {
-    changeUIStep();
-  }, [formSlice.currentStep]);
-
+    if (infoUser) {
+      changeUIStep();
+    }
+  }, [formSlice.currentStep, infoUser]);
+  useEffect(() => {
+    if (!infoUser && !dialog.isOpen) {
+      dispatch(setOpenDialog({ content: LoginContent, data: { id } }));
+    }
+  }, [dialog]);
   if (infoUser) {
     return (
       <div>
@@ -33,7 +42,5 @@ export default function FormInforPage() {
         </div>
       </div>
     );
-  } else {
-    return <LoginForm id={id} />;
   }
 }

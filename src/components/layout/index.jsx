@@ -3,8 +3,10 @@ import { Navigate, useLocation } from "react-router-dom";
 import { DashboardLayout, FormLayout, OtherLayout } from "./layouts";
 import useUUID from "hooks/useUUID";
 import { ToastContainer } from "react-toastify";
+
 const Layout = () => {
   const { checkValidateUUID } = useUUID();
+
   const location = useLocation();
   const pathname = location.pathname.split("/");
   const handleCheckLayout = (pathname) => {
@@ -26,8 +28,9 @@ const Layout = () => {
   return (
     <>
       <ToastContainer />
-      <div className="dark:bg-boxdark-2 dark:text-bodydark">
-        <div className="flex h-screen overflow-hidden">
+
+      <div className=" dark:bg-boxdark-2 dark:text-bodydark">
+        <div className=" flex h-screen overflow-hidden">
           {handleCheckLayout(pathname)}
         </div>
       </div>

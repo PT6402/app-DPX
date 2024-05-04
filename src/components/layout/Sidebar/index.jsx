@@ -47,7 +47,10 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
       <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
         <nav className="mt-5 py-4 px-4 lg:mt-9 lg:px-6">
           <div>
-            <ul className="mb-6 flex flex-col gap-1.5">
+            <ul
+              className="mb-6 flex flex-col gap-1.5"
+              onClick={() => setSidebarOpen(false)}
+            >
               <li>
                 <NavLink
                   to="/ctn_dt"

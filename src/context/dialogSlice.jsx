@@ -4,10 +4,31 @@ const dialogSlice = createSlice({
   initialState: {
     content: null,
     isOpen: false,
+    data: null,
   },
   reducers: {
-    setOpen: (state, action) => {
-      state.isOpen = action.payload;
+    setOpenDialog: (state, action) => {
+      state.isOpen = true;
+      state.content = action.payload.content;
+      state.data = action.payload.data;
+    },
+    setCloseDialog: (state) => {
+      state.isOpen = false;
+      state.content = null;
+      state.data = null;
+    },
+    setCloseNotClearContent: (state) => {
+      state.isOpen = false;
+    },
+    setOpenContent: (state) => {
+      state.isOpen = true;
     },
   },
 });
+export default dialogSlice.reducer;
+export const {
+  setOpenDialog,
+  setCloseDialog,
+  setCloseNotClearContent,
+  setOpenContent,
+} = dialogSlice.actions;

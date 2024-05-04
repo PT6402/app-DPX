@@ -13,7 +13,7 @@ export default function ItemUser({ dataItem }) {
     <>
       {dataToId && (
         <Link
-          className="p-2 lg:w-1/3 md:w-1/2 w-full"
+          className="p-2 lg:w-1/3 md:w-1/2 w-full hover:scale-105 scale-95"
           to={`${dataToId}/${dataItem?.phone}/${dataItem?.name}`}
         >
           <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">

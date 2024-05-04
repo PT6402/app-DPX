@@ -48,7 +48,7 @@ export default function LoginPage() {
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+                  className="w-full px-4 py-3 rounded-xl shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium text-lg"
                   placeholder="enter email"
                   ref={emailInput}
                 />
@@ -62,15 +62,15 @@ export default function LoginPage() {
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+                  className="w-full px-4 py-3 rounded-xl shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium text-lg"
                   placeholder="enter phone"
                   ref={phoneInput}
                 />
               </div>
-              <div className="flex justify-between items-baseline">
+              <div className="flex justify-center items-baseline">
                 <button
                   type="submit"
-                  className="mt-4 bg-green-500 text-white py-2 px-6 rounded-md hover:bg-green-600 "
+                  className="mt-4 bg-green-500 text-white py-2 px-10 rounded-lg hover:bg-green-600 text-2xl"
                   onClick={handleLogin}
                 >
                   Login
