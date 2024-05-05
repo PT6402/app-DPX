@@ -8,10 +8,10 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  build: {
-    outDir: "build",
-  },
-  base: "/",
+  // build: {
+  //   outDir: "build",
+  // },
+  // base: "/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
