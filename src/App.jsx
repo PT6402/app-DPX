@@ -20,7 +20,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<LoginPage />} />
           <Route element={<ProtectedRoute needAdmin />}>
-            <Route index path="/ctn_dt" element={<Ctn_dtPage />} />
+            <Route path="/ctn_dt" element={<Ctn_dtPage />} />
             <Route path="/ctn_dt/:id/:phone/:name" element={<DetailPage />} />
             <Route path="/vip" element={<VipPage />} />
           </Route>
