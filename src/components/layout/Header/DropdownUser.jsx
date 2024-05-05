@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { IconArrowDown, IconLogout } from "./icon";
 import { useSelector } from "react-redux";
-import useAdmin from "hooks/useAdmin";
+import useAdmin from "../../../hooks/useAdmin";
+// import useAdmin from "hooks/useAdmin";
 
 export default function DropdownUser() {
   const [dropdownOpen, setDropdownOpen] = useState(false);

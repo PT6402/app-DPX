@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Navigate, useLocation } from "react-router-dom";
 import { DashboardLayout, FormLayout, OtherLayout } from "./layouts";
-import useUUID from "hooks/useUUID";
+// import useUUID from "hooks/useUUID";
 import { ToastContainer } from "react-toastify";
+import useUUID from "../../hooks/useUUID";
 
 const Layout = () => {
   const { checkValidateUUID } = useUUID();
@@ -11,16 +12,16 @@ const Layout = () => {
   const pathname = location.pathname.split("/");
   console.log(pathname);
   const handleCheckLayout = (pathname) => {
-    switch (pathname[2]) {
+    switch (pathname[1]) {
       case "vip":
       case "ctn_dt":
       case "add_admin":
         return <DashboardLayout />;
       case "user":
-        return pathname.length == 3 && checkValidateUUID(pathname[3]) ? (
+        return pathname.length == 3 && checkValidateUUID(pathname[2]) ? (
           <FormLayout />
         ) : (
-          <Navigate to={"/app-DPX-deploy"} />
+          <Navigate to={"/"} />
         );
       default:
         return <OtherLayout />;

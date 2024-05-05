@@ -10,12 +10,12 @@ const Header = ({ sidebarOpen, setSidebarOpen }) => {
     <header className="sticky top-4 rounded-xl z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none  scale-95">
       <div
         className={`flex flex-grow items-center justify-${
-          urlCheck.length >= 4 ? "between" : "end"
+          urlCheck.length >= 3 ? "between" : "end"
         } px-4 py-4 shadow-3 md:px-6 2xl:px-11 gap-3  rounded-xl`}
       >
-        {urlCheck.length >= 4 && (
+        {urlCheck.length >= 3 && (
           <Link
-            to={"/app-DPX-deploy/ctn_dt"}
+            to={"/ctn_dt"}
             className="inline-flex text-graydark  outline-graydark outline-1 border-0 py-2 px-2  hover:scale-105 outline rounded-xl text-lg items-center justify-between hover:outline-red-500"
           >
             <IoArrowBackCircleOutline size={35} color="red" />

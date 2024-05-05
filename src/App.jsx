@@ -10,14 +10,14 @@ import {
   NotFoundPage,
   VipPage,
 } from "./components/pages";
-import ProtectedRoute from "routes/ProtectedRoute";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/app-DPX-deploy" element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<LoginPage />} />
           <Route element={<ProtectedRoute needAdmin />}>
             <Route path="ctn_dt" element={<Ctn_dtPage />} />
@@ -30,9 +30,9 @@ function App() {
           <Route path="user/:id" element={<FormInforPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
-        <Route path="/app-DPX-deploy/user/:id" element={<Layout />}>
+        {/* <Route path="/app-DPX-deploy/user/:id" element={<Layout />}>
           <Route index element={<FormInforPage />} />
-        </Route>
+        </Route> */}
       </Routes>
     </>
   );

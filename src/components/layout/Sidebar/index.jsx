@@ -53,7 +53,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
             >
               <li>
                 <NavLink
-                  to="/app-DPX-deploy/ctn_dt"
+                  to="/ctn_dt"
                   className={`group relative flex items-center gap-2.5 rounded-xl py-5 px-4 font-medium text-bodydark1 duration-300 ease-in-out dark:hover:bg-meta-4 ${
                     pathname.includes("ctn_dt") && "bg-graydark dark:bg-meta-4"
                   }`}
@@ -63,7 +63,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
               </li>
               <li>
                 <NavLink
-                  to="/app-DPX-deploy/vip"
+                  to="/vip"
                   className={`group relative flex items-center gap-2.5 rounded-xl py-5 px-4 font-medium text-bodydark1 duration-300 ease-in-out  dark:hover:bg-meta-4 ${
                     pathname.includes("vip") && "bg-graydark dark:bg-meta-4"
                   }`}
@@ -74,7 +74,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
               {infoUser != null && infoUser?.Role == "super-admin" && (
                 <li>
                   <NavLink
-                    to="/app-DPX-deploy/add_admin"
+                    to="/add_admin"
                     className={`group relative flex items-center gap-2.5 rounded-xl py-5 px-4 font-medium text-bodydark1 duration-300 ease-in-out dark:hover:bg-meta-4 ${
                       pathname.includes("add_admin") &&
                       "bg-graydark dark:bg-meta-4"
