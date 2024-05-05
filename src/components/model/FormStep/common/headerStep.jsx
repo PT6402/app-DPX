@@ -1,9 +1,7 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-/* eslint-disable react/prop-types */
-export default function HeaderStep() {
+const HeaderStep = () => {
   const { infor, currentStep } = useSelector((state) => state.formSlice);
   const [header, setHeader] = useState(null);
   const handleChangeTile = () => {
@@ -45,4 +43,5 @@ export default function HeaderStep() {
       </div>
     </div>
   );
-}
+};
+export default HeaderStep;
