@@ -1,6 +1,6 @@
 import { DialogComponet } from "components/common";
 import Loading from "components/common/Loading";
-import HeaderStep from "components/model/FormStep/common/HeaderStep";
+import HeaderStep from "components/model/FormStep/common/HeaderStep.jsx";
 import Next_Submit from "components/model/FormStep/common/Next_Submit";
 import Previous from "components/model/FormStep/common/Previous";
 import { useEffect, useState } from "react";
