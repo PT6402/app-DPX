@@ -1,4 +1,4 @@
-const listDT_CTN = ["opt1", "opt2", "opt3"];
+const listDT_CTN = ["Phat chi", "opt2", "opt3"];
 
 const handleGenerateOption = ({ listDT_CTN }) => {
   const arr = [];
