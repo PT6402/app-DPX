@@ -30,6 +30,9 @@ function App() {
           <Route path="user/:id" element={<FormInforPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
+        <Route path="/app-DPX-deploy/user/:id" element={<Layout />}>
+          <Route index element={<FormInforPage />} />
+        </Route>
       </Routes>
     </>
   );

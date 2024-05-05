@@ -9,14 +9,15 @@ const Layout = () => {
 
   const location = useLocation();
   const pathname = location.pathname.split("/");
+  console.log(pathname);
   const handleCheckLayout = (pathname) => {
-    switch (pathname[1]) {
+    switch (pathname[2]) {
       case "vip":
       case "ctn_dt":
       case "add_admin":
         return <DashboardLayout />;
       case "user":
-        return pathname.length == 3 && checkValidateUUID(pathname[2]) ? (
+        return pathname.length == 3 && checkValidateUUID(pathname[3]) ? (
           <FormLayout />
         ) : (
           <Navigate to={"/app-DPX-deploy"} />
