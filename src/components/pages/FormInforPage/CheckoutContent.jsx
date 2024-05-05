@@ -1,8 +1,11 @@
 import { Dialog } from "@headlessui/react";
-import { setCloseDialog } from "context/dialogSlice";
-import { clearForm } from "context/formSlice";
-import { logout } from "context/userSlice";
+// import { setCloseDialog } from "context/dialogSlice";
+// import { clearForm } from "context/formSlice";
+// import { logout } from "context/userSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { setCloseDialog } from "../../../context/dialogSlice";
+import { logout } from "../../../context/userSlice";
+import { clearForm } from "../../../context/formSlice";
 
 export default function CheckoutContent() {
   const { data } = useSelector((state) => state.dialogSlice);

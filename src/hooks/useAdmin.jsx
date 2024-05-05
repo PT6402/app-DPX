@@ -1,11 +1,13 @@
 import { useState } from "react";
 import useUUID from "./useUUID";
 import { useDispatch } from "react-redux";
-import { logout, updateInfo } from "context/userSlice";
+// import { logout, updateInfo } from "context/userSlice";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { setIsLoadding as loadingApp } from "context/loadingSlice";
+import { logout, updateInfo } from "../context/userSlice";
+import { setIsLoadding as loadingApp } from "../context/loadingSlice";
+// import { setIsLoadding as loadingApp } from "context/loadingSlice";
 const useAdmin = () => {
   const [isLoading, setIsLoading] = useState();
   const [isError, setIsError] = useState();

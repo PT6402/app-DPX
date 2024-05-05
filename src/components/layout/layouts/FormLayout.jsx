@@ -1,12 +1,16 @@
-import { DialogComponet } from "components/common";
-import Loading from "components/common/Loading";
+// import { DialogComponet } from "components/common";
+// import Loading from "components/common/Loading";
 // import HeaderStep from "components/model/FormStep/common/HeaderStep";
-import Next_Submit from "components/model/FormStep/common/Next_Submit";
-import Previous from "components/model/FormStep/common/Previous";
+// import Next_Submit from "components/model/FormStep/common/Next_Submit";
+// import Previous from "components/model/FormStep/common/Previous";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import HeaderStep from "../../model/FormStep/common/HeaderStep";
+import { DialogComponet } from "../../common";
+import Loading from "../../common/Loading";
+import Previous from "../../model/FormStep/common/Previous";
+import Next_Submit from "../../model/FormStep/common/Next_Submit";
 
 export default function FormLayout() {
   const [isShow, setIsShow] = useState();

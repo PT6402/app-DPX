@@ -1,5 +1,6 @@
-import useAdmin from "hooks/useAdmin";
+// import useAdmin from "hooks/useAdmin";
 import { useRef } from "react";
+import useAdmin from "../../../hooks/useAdmin";
 
 export default function AddAdminPage() {
   const { addAdmin } = useAdmin();

@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { nextStep } from "../../../../context/formSlice";
 import useAppScript from "../../../../hooks/useAppScript";
-import { setOpenDialog } from "context/dialogSlice";
-import CheckoutContent from "components/pages/FormInforPage/CheckoutContent";
+import { setOpenDialog } from "../../../../context/dialogSlice";
+import CheckoutContent from "../../../pages/FormInforPage/CheckoutContent";
+// import { setOpenDialog } from "context/dialogSlice";
+// import CheckoutContent from "components/pages/FormInforPage/CheckoutContent";
 
 /* eslint-disable react/prop-types */
 export default function Next_Submit() {

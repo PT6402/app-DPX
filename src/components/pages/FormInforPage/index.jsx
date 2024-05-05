@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { setOpenDialog } from "context/dialogSlice";
+// import { setOpenDialog } from "context/dialogSlice";
 import LoginContent from "./LoginContent";
+import { setOpenDialog } from "../../../context/dialogSlice";
 
 export default function FormInforPage() {
   const { id } = useParams();

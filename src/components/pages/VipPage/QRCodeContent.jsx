@@ -1,5 +1,5 @@
 import { Dialog } from "@headlessui/react";
-import { setCloseNotClearContent } from "context/dialogSlice";
+// import { setCloseNotClearContent } from "context/dialogSlice";
 import {
   copyBlobToClipboard,
   getBlobFromImageElement,
@@ -7,6 +7,7 @@ import {
 import { QRCodeCanvas } from "qrcode.react";
 import { useDispatch, useSelector } from "react-redux";
 import logoVip from "../../../assets/images/vip.png";
+import { setCloseNotClearContent } from "../../../context/dialogSlice";
 export default function QRCodeContent() {
   const { data } = useSelector((state) => state.dialogSlice);
   const dispatch = useDispatch();

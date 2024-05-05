@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateInfo } from "../context/userSlice";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { setIsLoadding as loadingApp } from "context/loadingSlice";
+// import { setIsLoadding as loadingApp } from "context/loadingSlice";
+import { setIsLoadding as loadingApp } from "../context/loadingSlice";
 const useAppScript = () => {
   const url_app = import.meta.env.VITE_URL_APP;
   const [isLoading, setIsLoadding] = useState();

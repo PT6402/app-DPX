@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Layout from "components/layout";
+import Layout from "./components/layout";
 import {
   AddAdminPage,
   Ctn_dtPage,
@@ -9,7 +9,7 @@ import {
   LoginPage,
   NotFoundPage,
   VipPage,
-} from "components/pages";
+} from "./components/pages";
 import ProtectedRoute from "routes/ProtectedRoute";
 
 import "react-toastify/dist/ReactToastify.css";

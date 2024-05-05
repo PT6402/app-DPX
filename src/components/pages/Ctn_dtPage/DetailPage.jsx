@@ -7,10 +7,11 @@ import {
   getBlobFromImageElement,
   copyBlobToClipboard,
 } from "copy-image-clipboard";
-import useAppScript from "hooks/useAppScript";
+// import useAppScript from "hooks/useAppScript";
 
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import useAppScript from "../../../hooks/useAppScript";
 export default function DetailPage() {
   const { type: typeUser } = useSelector((state) => state.excelSlice);
   const { id, phone, name } = useParams();

@@ -3,9 +3,11 @@ import { TbFileImport } from "react-icons/tb";
 import useExcel from "../../../hooks/useExcel";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useRef, useState } from "react";
-import { clear, updateType } from "context/excelSlice";
-import { SelectComponent } from "components/common";
+// import { clear, updateType } from "context/excelSlice";
+// import { SelectComponent } from "components/common";
 import { optionDT_CTN } from "./dataSelect";
+import { clear, updateType } from "../../../context/excelSlice";
+import { SelectComponent } from "../../common";
 
 export default function Header() {
   const selectRef = useRef();

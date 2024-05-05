@@ -1,12 +1,16 @@
-import { SelectComponent } from "components/common";
+// import { SelectComponent } from "components/common";
 import { useRef, useState } from "react";
 import { optionVIP } from "./dataSelect";
-import useAppScript from "hooks/useAppScript";
+// import useAppScript from "hooks/useAppScript";
 import styleSelect from "./styleSlectTypeVip";
 import { useDispatch, useSelector } from "react-redux";
-import { setOpenContent, setOpenDialog } from "context/dialogSlice";
+// import { setOpenContent, setOpenDialog } from "context/dialogSlice";
 import QRCodeContent from "./QRCodeContent";
-import useUUID from "hooks/useUUID";
+import useAppScript from "../../../hooks/useAppScript";
+import useUUID from "../../../hooks/useUUID";
+import { setOpenContent, setOpenDialog } from "../../../context/dialogSlice";
+import { SelectComponent } from "../../common";
+// import useUUID from "hooks/useUUID";
 
 export default function VipPage() {
   const { content } = useSelector((state) => state.dialogSlice);

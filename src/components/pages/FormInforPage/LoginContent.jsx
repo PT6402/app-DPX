@@ -1,11 +1,15 @@
 /* eslint-disable react/prop-types */
 import { Dialog } from "@headlessui/react";
-import Phone from "components/model/FormStep/icon/phone";
-import Spinner from "components/model/FormStep/icon/spinner";
-import { setCloseDialog } from "context/dialogSlice";
-import useAppScript from "hooks/useAppScript";
+// import Phone from "components/model/FormStep/icon/phone";
+// import Spinner from "components/model/FormStep/icon/spinner";
+// import { setCloseDialog } from "context/dialogSlice";
+// import useAppScript from "hooks/useAppScript";
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import useAppScript from "../../../hooks/useAppScript";
+import { setCloseDialog } from "../../../context/dialogSlice";
+import Phone from "../../model/FormStep/icon/phone";
+import Spinner from "../../model/FormStep/icon/spinner";
 
 export default function LoginContent() {
   const dispatch = useDispatch();
