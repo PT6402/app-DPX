@@ -13,10 +13,10 @@ export default function ItemUser({ dataItem }) {
     <>
       {dataToId && (
         <Link
-          className="p-2 lg:w-1/3 md:w-1/2 w-full hover:scale-105 scale-95"
+          className="p-2 lg:w-1/3 md:w-1/2 w-full hover:scale-100 scale-95 duration-150 "
           to={`${dataToId}/${dataItem?.phone}/${dataItem?.name}`}
         >
-          <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+          <div className="h-full flex items-center border-gray-200  p-4 rounded-lg hover:border-black hover:border-2 border-2">
             <img
               alt="team"
               className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
