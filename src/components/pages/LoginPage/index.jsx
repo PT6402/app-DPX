@@ -26,7 +26,7 @@ export default function LoginPage() {
   return (
     <>
       {isLoading && <Loading />}
-      <div className="relative flex text-gray-800 antialiased flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12 ">
+      <div className="relative flex text-gray-800 antialiased flex-col justify-center overflow-hidden bg-gray-50  sm:py-12 ">
         {isError && (
           <div
             role="alert"
@@ -38,7 +38,7 @@ export default function LoginPage() {
           </div>
         )}
         <div className="relative  sm:w-96 mx-auto text-center">
-          <div className="mt-4 bg-white shadow-md rounded-lg text-left">
+          <div className=" bg-white shadow-md rounded-lg text-left">
             <div className="h-2 bg-green-400 rounded-t-md"></div>
             <div className="px-8 py-6 ">
               <div className="mb-5">
@@ -72,7 +72,7 @@ export default function LoginPage() {
               <div className="flex justify-center items-baseline">
                 <button
                   type="submit"
-                  className="mt-4 bg-green-500 text-white py-2 px-10 rounded-lg hover:bg-green-600 text-2xl"
+                  className="mt-1 bg-green-500 text-white py-2 px-10 rounded-lg hover:bg-green-600 text-2xl"
                   onClick={handleLogin}
                 >
                   Login
