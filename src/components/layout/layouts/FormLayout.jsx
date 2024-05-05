@@ -6,11 +6,11 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
-import HeaderStep from "../../model/FormStep/common/HeaderStep";
 import { DialogComponet } from "../../common";
 import Loading from "../../common/Loading";
 import Previous from "../../model/FormStep/common/Previous";
 import Next_Submit from "../../model/FormStep/common/Next_Submit";
+import HeaderStep from "../../model/FormStep/common/HeaderStep";
 
 export default function FormLayout() {
   const [isShow, setIsShow] = useState();
@@ -33,7 +33,7 @@ export default function FormLayout() {
       <DialogComponet />
       <div className="relative flex flex-col flex-1">
         {isLoading && <Loading />}
-        {isShow && <HeaderStep title />}
+        {/* {isShow && <HeaderStep />} */}
         <div className="  relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden ">
           <main>
             <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10 ">
