@@ -15,7 +15,7 @@ const Header = ({ sidebarOpen, setSidebarOpen }) => {
       >
         {urlCheck.length >= 3 && (
           <Link
-            to={"/ctn_dt"}
+            to={"/app-DPX-deploy/ctn_dt"}
             className="inline-flex text-graydark  outline-graydark outline-1 border-0 py-2 px-2  hover:scale-105 outline rounded-xl text-lg items-center justify-between hover:outline-red-500"
           >
             <IoArrowBackCircleOutline size={35} color="red" />

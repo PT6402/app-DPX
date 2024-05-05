@@ -24,10 +24,10 @@ const useAdmin = () => {
       if (res.data.status == 200) {
         dispatch(updateInfo(res.data.data));
         if (res.data.data.Role == "admin") {
-          navigate("/ctn_dt");
+          navigate("/app-DPX-deploy/ctn_dt");
         }
         if (res.data.data.Role == "super-admin") {
-          navigate("/add_admin");
+          navigate("/app-DPX-deploy/add_admin");
         }
       } else {
         setIsError(res.data.message);
@@ -39,7 +39,7 @@ const useAdmin = () => {
     }
   };
   const logoutAdmin = () => {
-    navigate("/");
+    navigate("/app-DPX-deploy");
     dispatch(logout());
   };
   const addAdmin = async ({ name, phone, email }) => {

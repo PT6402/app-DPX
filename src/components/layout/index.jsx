@@ -19,7 +19,7 @@ const Layout = () => {
         return pathname.length == 3 && checkValidateUUID(pathname[2]) ? (
           <FormLayout />
         ) : (
-          <Navigate to={"/"} />
+          <Navigate to={"/app-DPX-deploy"} />
         );
       default:
         return <OtherLayout />;

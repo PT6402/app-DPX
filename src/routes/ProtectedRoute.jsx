@@ -13,7 +13,7 @@ export default function ProtectedRoute({ needAdmin, needSuperAdmin }) {
       return <Outlet />;
     }
     if (!infoUser) {
-      return <Navigate to={"/"} />;
+      return <Navigate to={"/app-DPX-deploy"} />;
     }
   }
 
@@ -22,8 +22,8 @@ export default function ProtectedRoute({ needAdmin, needSuperAdmin }) {
       return <Outlet />;
     }
     if (!infoUser) {
-      return <Navigate to={"/"} />;
+      return <Navigate to={"/app-DPX-deploy"} />;
     }
   }
-  return <Navigate to="/" />;
+  return <Navigate to="/app-DPX-deploy" />;
 }
