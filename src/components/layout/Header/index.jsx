@@ -7,11 +7,11 @@ const Header = ({ sidebarOpen, setSidebarOpen }) => {
   const { pathname } = useLocation();
   const urlCheck = pathname.split("/");
   return (
-    <header className="sticky top-4 rounded-xl z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none  scale-95">
+    <header className="sticky top-4 rounded-xl z-999 flex w-full bg-white drop-shadow-1   scale-95">
       <div
         className={`flex flex-grow items-center justify-${
           urlCheck.length >= 3 ? "between" : "end"
-        } px-4 py-4 shadow-3 md:px-6 2xl:px-11 gap-3  rounded-xl`}
+        } px-4 py-4 shadow-3 md:px-4 2xl:px-11 gap-3  rounded-xl`}
       >
         {urlCheck.length >= 3 && (
           <Link
