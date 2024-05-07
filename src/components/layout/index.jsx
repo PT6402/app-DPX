@@ -10,7 +10,6 @@ const Layout = () => {
 
   const location = useLocation();
   const pathname = location.pathname.split("/");
-  console.log(pathname);
   const handleCheckLayout = (pathname) => {
     switch (pathname[1]) {
       case "vip":

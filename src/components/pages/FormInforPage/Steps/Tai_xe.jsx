@@ -27,7 +27,7 @@ export default function Tai_xe() {
           htmlFor="firstname"
           className="font-bold mb-1 text-gray-700 block"
         >
-          Họ và tên
+          Họ và tên tài xế
         </label>
         <input
           type="text"
@@ -40,7 +40,7 @@ export default function Tai_xe() {
 
       <div className="mb-5">
         <label htmlFor="email" className="font-bold mb-1 text-gray-700 block">
-          Số điện thoại
+          Số điện thoại tài xế
         </label>
         <input
           type="text"

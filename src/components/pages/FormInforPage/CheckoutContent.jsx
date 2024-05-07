@@ -1,7 +1,3 @@
-import { Dialog } from "@headlessui/react";
-// import { setCloseDialog } from "context/dialogSlice";
-// import { clearForm } from "context/formSlice";
-// import { logout } from "context/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { setCloseDialog } from "../../../context/dialogSlice";
 import { logout } from "../../../context/userSlice";
@@ -29,19 +25,7 @@ export default function CheckoutContent() {
           </div>
         )}
         <div className="sm:flex sm:items-start">
-          <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-            <Dialog.Title
-              as="h3"
-              className="text-base font-semibold leading-6 text-gray-900"
-            >
-              Thông báo
-            </Dialog.Title>
-            <div className="mt-2">
-              <div className="max-w-sm mx-auto">
-                Dạ Huynh đệ có muốn thoát không ạ ?
-              </div>
-            </div>
-          </div>
+          <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left"></div>
         </div>
       </div>
       <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
@@ -51,13 +35,6 @@ export default function CheckoutContent() {
           className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto items-center"
         >
           Thoát
-        </button>
-        <button
-          type="button"
-          className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-          onClick={() => dispatch(setCloseDialog())}
-        >
-          Ở lại
         </button>
       </div>
     </>

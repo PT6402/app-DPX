@@ -16,6 +16,7 @@ export default function Truong_doan() {
           size={250}
           includeMargin={true}
           level={"H"}
+          className="rounded-xl border p-2"
         />
       </div>
 

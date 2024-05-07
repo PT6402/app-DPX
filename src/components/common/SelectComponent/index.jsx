@@ -12,6 +12,7 @@ export default function SelectComponent({
   classNames,
   isClearable,
   styleSelect,
+  isSearchable,
 }) {
   return (
     <>
@@ -27,6 +28,7 @@ export default function SelectComponent({
         onChange={(e) => getValueSelect(e)}
         isDisabled={isDisabled}
         className={classNames}
+        isSearchable={isSearchable}
       />
     </>
   );

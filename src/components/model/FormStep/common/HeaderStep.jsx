@@ -17,13 +17,10 @@ const HeaderStep = () => {
   }, [currentStep]);
   return (
     <div className=" border-b-2 py-4 border-gray-300 px-10">
-      <div className="uppercase tracking-wide text-xs font-bold text-gray-500 mb-1 leading-tight">
-        Step: {currentStep} of {infor.lastStep}
-      </div>
       <div className="flex flex-col md:flex-row md:items-center md:justify-between">
         <div className="flex-1">
           <div>
-            <div className="text-lg font-bold text-gray-700 leading-tight">
+            <div className="text-xl font-bold text-red-500 leading-tight ">
               {header}
             </div>
           </div>

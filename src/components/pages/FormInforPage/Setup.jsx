@@ -1,4 +1,4 @@
-import { Tai_xe, Truong_doan, Xe } from "./Steps";
+import { Review, Tai_xe, Truong_doan, Xe } from "./Steps";
 
 const infor = {
   steps: [
@@ -14,8 +14,13 @@ const infor = {
     },
     {
       step: 3,
-      title: "Xe",
+      title: "Thông tin xe",
       component: Xe,
+    },
+    {
+      step: 4,
+      title: "Kiểm tra thông tin",
+      component: Review,
     },
   ],
 };

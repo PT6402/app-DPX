@@ -70,12 +70,11 @@ const useAppScript = () => {
       formData.append("name", name);
       formData.append("name_tai_xe", contextForm?.name_tai_xe);
       formData.append("phone_tai_xe", contextForm?.phone_tai_xe);
+      formData.append("type_car", contextForm?.type_car.label);
+      formData.append("number_of_people", contextForm?.number_of_people);
+      formData.append("time_leave_pagoda", contextForm?.time_leave_pagoda);
+      formData.append("bien_so", contextForm?.bien_so);
       const res = await axios.post(urlServer, formData);
-      // if (res.data.status == 200) {
-      //   toast.success(res.data.message, {
-      //     position: "top-right",
-      //   });
-      // }
       return res.data;
     } catch (error) {
       console.log(error);

@@ -7,7 +7,7 @@ const useUUID = () => {
     return uuidv5(data, MY_NAMESPACE);
   };
   const checkValidateUUID = (id) => {
-    console.log(uuidValidate(id), id);
+    // console.log(uuidValidate(id), id);
     return uuidValidate(id);
   };
 

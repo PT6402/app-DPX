@@ -7,7 +7,7 @@ export default function DialogComponet() {
   const dialog = useSelector((state) => state.dialogSlice);
   return (
     <Transition.Root show={dialog.isOpen} as={Fragment}>
-      <Dialog className="relative z-10" onClose={() => null}>
+      <Dialog className="relative z-999" onClose={() => null}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"

@@ -3,11 +3,10 @@ const styleSelect = {
   option: (baseStyles, { isSelected }) => ({
     ...baseStyles,
     backgroundColor: isSelected ? "#3c3c3c !important" : "transparent",
-    // color: "white",
     cursor: "pointer",
     fontWeight: isSelected ? "bold" : "normal",
     letterSpacing: "-0.05rem",
-    fontSize: "1.3rem",
+    fontSize: "1.4rem",
     width: "97%",
     borderRadius: ".7rem",
     margin: ".5rem auto",
@@ -18,8 +17,7 @@ const styleSelect = {
   singleValue: (baseStyles) => ({
     ...baseStyles,
     fontWeight: "bold",
-    // letterSpacing: "-0.05rem",
-    fontSize: "1.6rem",
+    fontSize: "1.3rem",
   }),
 
   menu: (baseStyles) => ({
@@ -46,14 +44,15 @@ const styleSelect = {
 
   control: (baseStyle, state) => ({
     ...baseStyle,
-    width: "300px",
+    width: "100%",
     fontSize: "1.5rem",
     borderRadius: ".8rem",
     textAlign: "center",
+    padding: "5px",
+    border: ".01rem solid gray",
   }),
   clearIndicator: (baseStyle, state) => ({
     ...baseStyle,
-    // border: ".2rem solid black",
   }),
   noOptionsMessage: (baseStyle, state) => ({
     ...baseStyle,
