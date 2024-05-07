@@ -12,11 +12,13 @@ export default function Xe() {
   const { infoUser } = useSelector((state) => state.userSlice);
   const { contextForm, currentStep } = useSelector((state) => state.formSlice);
   const [value, getValueSelect] = useState(() => {
-    const itemValue = optionType.find(
-      ({ label }) => infoUser?.Type_Car.toUpperCase() == label.toUpperCase()
-    );
-    if (itemValue) {
-      return itemValue;
+    if (infoUser?.Type_Car) {
+      const itemValue = optionType.find(
+        ({ label }) => infoUser.Type_Car.toUpperCase() == label.toUpperCase()
+      );
+      if (itemValue) {
+        return itemValue;
+      }
     }
     if (contextForm?.type_car) {
       return contextForm.type_car;
