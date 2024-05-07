@@ -14,7 +14,7 @@ export default function Xe() {
   const [value, getValueSelect] = useState(() => {
     if (infoUser?.Type_Car) {
       const itemValue = optionType.find(
-        ({ label }) => infoUser.Type_Car.toUpperCase() == label.toUpperCase()
+        ({ label }) => infoUser?.Type_Car.toUpperCase() == label.toUpperCase()
       );
       if (itemValue) {
         return itemValue;

@@ -16,6 +16,9 @@ function formatDateForInput(datetimeString) {
   return formattedDateTime;
 }
 function formatDateTime(datetimeString) {
+  if (datetimeString == "0000-00-00T00:0000:00.000Z") {
+    return "chưa có";
+  }
   // Chuyển đổi chuỗi ngày giờ thành một đối tượng Date
   var date = new Date(datetimeString);
 
