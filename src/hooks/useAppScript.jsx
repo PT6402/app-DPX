@@ -68,12 +68,15 @@ const useAppScript = () => {
       formData.append("id", id);
       formData.append("phone", phone);
       formData.append("name", name);
-      formData.append("name_tai_xe", contextForm?.name_tai_xe);
-      formData.append("phone_tai_xe", contextForm?.phone_tai_xe);
-      formData.append("type_car", contextForm?.type_car.label);
-      formData.append("number_of_people", contextForm?.number_of_people);
-      formData.append("time_leave_pagoda", contextForm?.time_leave_pagoda);
-      formData.append("bien_so", contextForm?.bien_so);
+      formData.append("name_tai_xe", contextForm?.name_tai_xe || "null");
+      formData.append("phone_tai_xe", contextForm?.phone_tai_xe || 0);
+      formData.append("type_car", contextForm?.type_car.label || "null");
+      formData.append("number_of_people", contextForm?.number_of_people || 0);
+      formData.append(
+        "time_leave_pagoda",
+        contextForm?.time_leave_pagoda || "null"
+      );
+      formData.append("bien_so", contextForm?.bien_so || 0);
       const res = await axios.post(urlServer, formData);
       return res.data;
     } catch (error) {
