@@ -16,8 +16,8 @@ export default function Review() {
           <div className="bg-gray-200 rounded-lg px-4 py-2">
             <h3 className="font-medium text-lg">Trưởng đoàn</h3>
             <ul className="mt-2">
-              <li>Pháp danh: {infoUser?.Name}</li>
-              <li>Số điện thoại: {infoUser?.Phone}</li>
+              <li className="text-lg">Pháp danh: {infoUser?.Name}</li>
+              <li className="text-lg">Số điện thoại: {infoUser?.Phone}</li>
             </ul>
           </div>
         </div>
@@ -33,8 +33,12 @@ export default function Review() {
           <div className="bg-gray-200 rounded-lg px-4 py-2">
             <h3 className="font-medium text-lg">Tài xế</h3>
             <ul className="mt-2">
-              <li>Họ và tên: {contextForm?.name_tai_xe || "chưa có"}</li>
-              <li>Số điện thoại: {contextForm?.phone_tai_xe || "chưa có"}</li>
+              <li className="text-lg">
+                Họ và tên: {contextForm?.name_tai_xe || "chưa có"}
+              </li>
+              <li className="text-lg">
+                Số điện thoại: {contextForm?.phone_tai_xe || "chưa có"}
+              </li>
             </ul>
           </div>
         </div>
@@ -50,12 +54,16 @@ export default function Review() {
           <div className="bg-gray-200 rounded-lg px-4 py-2">
             <h3 className="font-medium text-lg">Thông tin xe</h3>
             <ul className="mt-2">
-              <li>Biển số xe: {contextForm?.bien_so || "chưa có"}</li>
-              <li>Loại xe: {contextForm?.type_car?.label || "chưa có"}</li>
-              <li>
+              <li className="text-lg">
+                Biển số xe: {contextForm?.bien_so || "chưa có"}
+              </li>
+              <li className="text-lg">
+                Loại xe: {contextForm?.type_car?.label || "chưa có"}
+              </li>
+              <li className="text-lg">
                 Số lượng người: {contextForm?.number_of_people || "chưa có"}
               </li>
-              <li>
+              <li className="text-lg">
                 Rời chùa:{" "}
                 {formatDateTime(
                   contextForm?.time_leave_pagoda || "0000-00-00T00:0000:00.000Z"

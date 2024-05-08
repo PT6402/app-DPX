@@ -82,8 +82,9 @@ export default function Xe() {
         <label className="font-bold mb-1 text-gray-700 block">
           Số lượng người
         </label>
+
         <input
-          type="text"
+          type="number"
           className="w-full px-4 py-3 rounded-xl shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
           placeholder="nhập số lượng người"
           ref={numberOfPeopleInput}

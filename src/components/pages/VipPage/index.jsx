@@ -53,10 +53,10 @@ export default function VipPage() {
     });
   };
   return (
-    <section className="relative text-gray-600 body-font rounded-xl overflow-hidden">
-      <div className="container mx-auto flex px-5 items-center pt-5 justify-center flex-col">
-        <div className="mx-auto  max-w-xl sm:mt-20">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+    <section className="relative text-gray-600 body-font rounded-xl  h-full flex-1">
+      <div className=" mx-auto flex px-5 items-center pt-5 justify-center flex-col h-full flex-1 ">
+        <div className="mx-auto  max-w-xl sm:mt-20  flex-1 flex flex-col h-full">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 h-full flex-1">
             <div>
               <label
                 htmlFor="first-name"

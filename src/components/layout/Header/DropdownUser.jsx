@@ -46,7 +46,7 @@ export default function DropdownUser() {
         to="#"
       >
         <span className="text-right lg:block">
-          <span className="block text-2xl font-medium text-black dark:text-white">
+          <span className="block text-2xl  text-red-500 font-bold tracking-wider ">
             {infoUser?.Name}
           </span>
         </span>

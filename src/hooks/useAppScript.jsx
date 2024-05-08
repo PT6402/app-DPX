@@ -70,7 +70,10 @@ const useAppScript = () => {
       formData.append("name", name);
       formData.append("name_tai_xe", contextForm?.name_tai_xe || "");
       formData.append("phone_tai_xe", contextForm?.phone_tai_xe || "");
-      formData.append("type_car", contextForm?.type_car?.label || "");
+      formData.append(
+        "type_car",
+        contextForm?.type_car?.label + "-" + "[CTN/DT]" || ""
+      );
       formData.append("number_of_people", contextForm?.number_of_people || "");
       formData.append(
         "time_leave_pagoda",
@@ -100,8 +103,8 @@ const useAppScript = () => {
         formData.append("id", `'${urlID}`);
         formData.append("phone", phone);
         formData.append("name", name);
-        formData.append("phone_tai_xe", 0);
-        formData.append("bien_xo", licensePlateInput);
+        formData.append("type_car", type.split("-")[1] + "-" + "[VIP]");
+        formData.append("bien_so", licensePlateInput);
         await axios.post(urlServer, formData);
       }
       return addLogin.data;

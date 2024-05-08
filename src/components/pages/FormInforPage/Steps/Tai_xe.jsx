@@ -43,7 +43,7 @@ export default function Tai_xe() {
           Số điện thoại tài xế
         </label>
         <input
-          type="text"
+          type="number"
           className="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
           placeholder="nhập số điện thoại"
           ref={phoneInput}

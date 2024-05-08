@@ -1,4 +1,8 @@
-const listVIP = ["opt1", "opt2", "opt3"];
+const listVIP = [
+  "Vận chuyển cúng dường",
+  "Đưa đón Quý Thầy,Cô",
+  "Đưa đón khách VIP",
+];
 
 const handleGenerateOption = ({ listVIP }) => {
   const arr = [];

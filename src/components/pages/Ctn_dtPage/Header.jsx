@@ -51,7 +51,7 @@ export default function Header() {
                 getValueSelect={getValueSelect}
                 selectRef={selectRef}
                 value={value}
-                placeholder={"CTN|DT|VIP"}
+                placeholder={"type ?"}
                 isDisabled={value != null}
               />
 

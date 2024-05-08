@@ -3,11 +3,7 @@ import Header from "../Header";
 import Sidebar from "../Sidebar";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { DialogComponet } from "../../common";
-import Loading from "../../common/Loading";
-// import Loading from "components/common/Loading";
-// import { DialogComponet } from "components/common";
-
+import { DialogComponet, Loading } from "../../common";
 export default function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { isLoading } = useSelector((state) => state.loadingSlice);

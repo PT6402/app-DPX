@@ -7,7 +7,7 @@ const styleSelect = {
     cursor: "pointer",
     fontWeight: isSelected ? "bold" : "normal",
     letterSpacing: "-0.05rem",
-    fontSize: "1.6rem",
+    fontSize: "1.3rem",
     width: "97%",
     borderRadius: ".7rem",
     margin: ".5rem auto",
@@ -19,7 +19,7 @@ const styleSelect = {
     ...baseStyles,
     fontWeight: "bold",
     // letterSpacing: "-0.05rem",
-    fontSize: "1.6rem",
+    fontSize: "1.3rem",
   }),
 
   menu: (baseStyles) => ({

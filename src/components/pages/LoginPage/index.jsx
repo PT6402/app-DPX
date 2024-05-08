@@ -1,8 +1,6 @@
-// import Loading from "components/common/Loading";
-// import useAdmin from "hooks/useAdmin";
 import { useEffect, useRef } from "react";
 import useAdmin from "../../../hooks/useAdmin";
-import Loading from "../../common/Loading";
+import { Loading } from "../../common";
 
 export default function LoginPage() {
   const { loginAdmin, isLoading, isError } = useAdmin();

@@ -29,7 +29,7 @@ export default function Truong_doan() {
         </label>
         <input
           type="text"
-          className="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+          className="w-full px-4 py-3 rounded-lg shadow-sm outline-none  text-gray-600 font-medium border-transparent"
           value={infoUser.Name}
           readOnly
           disabled
@@ -42,7 +42,7 @@ export default function Truong_doan() {
         </label>
         <input
           type="text"
-          className="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+          className="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium border-transparent"
           value={infoUser.Phone}
           readOnly
           disabled

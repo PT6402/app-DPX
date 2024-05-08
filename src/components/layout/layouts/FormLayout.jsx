@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
-import { DialogComponet } from "../../common";
-import Loading from "../../common/Loading";
+import { DialogComponet, Loading } from "../../common";
 import Previous from "../../model/FormStep/common/Previous";
 import Next_Submit from "../../model/FormStep/common/Next_Submit";
 import HeaderStep from "../../model/FormStep/common/HeaderStep";
