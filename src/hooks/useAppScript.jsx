@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 // import { setIsLoadding as loadingApp } from "context/loadingSlice";
 import { setIsLoadding as loadingApp } from "../context/loadingSlice";
 const useAppScript = () => {
+  const { infoUser } = useSelector((state) => state.userSlice);
   const url_app = import.meta.env.VITE_URL_APP;
   const [isLoading, setIsLoadding] = useState();
   const [isError, setIsError] = useState();
@@ -77,6 +78,11 @@ const useAppScript = () => {
         contextForm?.time_leave_pagoda || ""
       );
       formData.append("bien_so", contextForm?.bien_so || "");
+      //
+      formData.append("image_car", infoUser?.Image_Car || "");
+      formData.append("khu_vuc", infoUser?.Khu_vuc || "");
+      formData.append("vi_tri", infoUser?.Vi_tri || "");
+      formData.append("status", infoUser?.Status || "");
       const res = await axios.post(urlServer, formData);
       return res.data;
     } catch (error) {
