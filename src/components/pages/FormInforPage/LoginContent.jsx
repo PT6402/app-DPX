@@ -78,7 +78,7 @@ export default function LoginContent() {
                   <button
                     onClick={handleLogin}
                     type="button"
-                    className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-lg font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto items-center"
+                    className="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-lg font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto items-center"
                   >
                     {!isLoading ? (
                       "Đăng nhập"
