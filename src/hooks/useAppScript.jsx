@@ -83,10 +83,7 @@ const useAppScript = () => {
       formData.append("khu_vuc", infoUser?.Khu_vuc || "");
       formData.append("vi_tri", infoUser?.Vi_tri || "");
       formData.append("status", infoUser?.Status || "");
-      formData.append(
-        "type",
-        infoUser?.Type?.includes("CTN") ? "CHÚNG THANH NIÊN" : "ĐẠO TRÀNG" || ""
-      );
+      formData.append("type", infoUser?.Type);
       const res = await axios.post(urlServer, formData);
       return res.data;
     } catch (error) {
