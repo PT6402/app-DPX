@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { QRCodeCanvas } from "qrcode.react";
 import { useRef } from "react";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import logoDPX from "../../../assets/images/photo_CTN_DT.png";
 import { Stage, Layer, Image, Text } from "react-konva";
@@ -9,12 +9,12 @@ import useImage from "use-image";
 import { saveAs } from "file-saver";
 import { formatDateTime } from "../../../util/TimeFormat";
 export default function SumaryInfoImage() {
-  //   const { id } = useParams();
+  const { id } = useParams();
   const { contextForm } = useSelector((state) => state.formSlice);
   const { infoUser } = useSelector((state) => state.userSlice);
   const imageRef = useRef();
   const qr_code = document.getElementById("my-qrcode");
-  //   const urlID = `${import.meta.env.VITE_URL_APP}user/${id}`;
+  const urlID = `${import.meta.env.VITE_URL_APP}user/${id}`;
   const qrImg = qr_code?.toDataURL();
   const [imageDP] = useImage(logoDPX);
   const [imageQR] = useImage(qrImg);
@@ -59,7 +59,7 @@ export default function SumaryInfoImage() {
         </svg>
       </button>
       <QRCodeCanvas
-        value={infoUser?.ID}
+        value={urlID}
         id="my-qrcode"
         size={250}
         includeMargin={true}
