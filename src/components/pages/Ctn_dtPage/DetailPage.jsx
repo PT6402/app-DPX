@@ -38,7 +38,14 @@ export default function DetailPage() {
     return canvas.toDataURL();
   };
   const handleAddUser = () => {
-    addUser({ id, phone, name, type: `${typeUser.label}` });
+    addUser({
+      id,
+      phone,
+      name,
+      type: `${
+        typeUser.label.includes("CTN") ? "CHÚNG THANH NIÊN" : "ĐẠO TRÀNG" || ""
+      }`,
+    });
   };
 
   return (
