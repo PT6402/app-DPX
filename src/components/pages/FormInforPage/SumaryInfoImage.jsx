@@ -24,12 +24,14 @@ export default function SumaryInfoImage() {
     phone_truong_doan: infoUser?.Phone,
     name_truong_doan: infoUser?.Name,
     bien_so: contextForm.bien_so,
-    type: "đạo tràng",
+    type: infoUser?.Type,
     so_luong_nguoi: `${
       contextForm?.number_of_people
     }/${contextForm?.type_car?.label?.substring(0, 2)}`,
     thoi_gian_roi_chua: formatDateTime(contextForm?.time_leave_pagoda || ""),
-    vi_tri_dau: "123",
+    vi_tri_dau: infoUser?.Khu_vuc
+      ? `${infoUser?.Khu_vuc} - ${infoUser?.Vi_tri}`
+      : "",
   };
   const handleDownload = () => {
     const uri = imageRef.current.toDataURL();
@@ -69,7 +71,7 @@ export default function SumaryInfoImage() {
       <Stage width={842} height={595} ref={imageRef} className="hidden">
         <Layer>
           <Image image={imageDP} />
-          <Image image={imageQR} width={258} height={258} x={570} y={296} />
+          <Image image={imageQR} width={258} height={258} x={570} y={257} />
           <Text
             text={data.type.toUpperCase()}
             x={32}

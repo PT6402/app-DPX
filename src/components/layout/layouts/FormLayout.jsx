@@ -23,7 +23,6 @@ export default function FormLayout() {
   }, [isOpen]);
   return (
     <>
-      {" "}
       <DialogComponet />
       <div className="relative flex flex-col flex-1">
         {isLoading && <Loading />}

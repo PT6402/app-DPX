@@ -38,7 +38,7 @@ export default function DetailPage() {
     return canvas.toDataURL();
   };
   const handleAddUser = () => {
-    addUser({ id, phone, name, type: `CTN/DT-${typeUser.label}` });
+    addUser({ id, phone, name, type: `${typeUser.label}` });
   };
 
   return (
