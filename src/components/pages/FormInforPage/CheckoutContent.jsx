@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCloseDialog } from "../../../context/dialogSlice";
 import { logout } from "../../../context/userSlice";
 import { clearForm } from "../../../context/formSlice";
+import SumaryInfoImage from "./SumaryInfoImage";
 
 export default function CheckoutContent() {
   const { data } = useSelector((state) => state.dialogSlice);
@@ -29,10 +30,11 @@ export default function CheckoutContent() {
         </div>
       </div>
       <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+        <SumaryInfoImage />
         <button
           onClick={handleCloseDialog}
           type="button"
-          className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto items-center"
+          className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto items-center mr-3 my-1"
         >
           Thoát
         </button>

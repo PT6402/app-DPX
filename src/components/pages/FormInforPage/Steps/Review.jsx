@@ -1,11 +1,13 @@
 import { useSelector } from "react-redux";
 import { formatDateTime } from "../../../../util/TimeFormat";
+// import SumaryInfoImage from "../SumaryInfoImage";
 
 export default function Review() {
   const { contextForm } = useSelector((state) => state.formSlice);
   const { infoUser } = useSelector((state) => state.userSlice);
   return (
-    <div className="p-4 flex flex-col gap-4">
+    <div className="p-4 flex flex-col gap-4 relative">
+      {/* <SumaryInfoImage /> */}
       <div className="flex flex-col md:flex-row max-w-sm space-y-4 md:space-y-0 md:space-x-4">
         <div className="flex-shrink-0 -mb-6 mt-4 z-20">
           <div className="h-10 w-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
