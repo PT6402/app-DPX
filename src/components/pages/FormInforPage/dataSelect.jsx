@@ -1,4 +1,4 @@
-const listType = ["4 chỗ", "7 chỗ", "16 chỗ", "50 chỗ"];
+const listType = ["4 chỗ", "7 chỗ", "16 chỗ", "42 chỗ", "50 chỗ"];
 const handleGenerateOption = ({ list }) => {
   const arr = [];
   list.map((item) => {
