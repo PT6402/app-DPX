@@ -23,15 +23,13 @@ export default function SumaryInfoImage() {
     name_tai_xe: contextForm?.name_tai_xe,
     phone_truong_doan: infoUser?.Phone,
     name_truong_doan: infoUser?.Name,
-    bien_so: contextForm.bien_so,
-    type: infoUser?.Type,
+    bien_so: contextForm?.bien_so,
+    type: infoUser?.Type.split("|"),
     so_luong_nguoi: `${
       contextForm?.number_of_people
     }/${contextForm?.type_car?.label?.substring(0, 2)}`,
     thoi_gian_roi_chua: formatDateTime(contextForm?.time_leave_pagoda || ""),
-    vi_tri_dau: infoUser?.Khu_vuc
-      ? `${infoUser?.Khu_vuc} - ${infoUser?.Vi_tri}`
-      : "",
+    vi_tri_dau: infoUser?.Vi_tri ? `${infoUser?.Vi_tri}` : "",
   };
   const handleDownload = () => {
     const uri = imageRef.current.toDataURL();
@@ -66,17 +64,30 @@ export default function SumaryInfoImage() {
         size={250}
         includeMargin={true}
         level={"H"}
-        className="rounded-xl border p-2 hidden"
+        className="rounded-xl border p-2 hidden "
       />
       <Stage width={842} height={595} ref={imageRef} className="hidden">
         <Layer>
           <Image image={imageDP} />
           <Image image={imageQR} width={258} height={258} x={570} y={257} />
           <Text
-            text={data.type.toUpperCase()}
+            text={
+              data?.type[0].toUpperCase() == "CTN"
+                ? "CHÚNG THANH NIÊN"
+                : "ĐẠO TRÀNG"
+            }
             x={32}
             y={68}
             fontSize={32}
+            fill="black"
+            fontFamily="TimeNewRoman"
+            fontStyle="bold"
+          />
+          <Text
+            text={data?.type[1].toUpperCase()}
+            x={32}
+            y={120}
+            fontSize={35}
             fill="black"
             fontFamily="TimeNewRoman"
             fontStyle="bold"

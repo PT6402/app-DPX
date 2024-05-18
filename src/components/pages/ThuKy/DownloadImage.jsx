@@ -76,13 +76,22 @@ export default function DownloadImage({
           <Image image={imageQR} width={258} height={258} x={570} y={257} />
           <Text
             text={
-              data?.type?.toUpperCase() == "CTN"
+              data?.type[0].toUpperCase() == "CTN"
                 ? "CHÚNG THANH NIÊN"
                 : "ĐẠO TRÀNG"
             }
             x={32}
             y={68}
             fontSize={32}
+            fill="black"
+            fontFamily="TimeNewRoman"
+            fontStyle="bold"
+          />
+          <Text
+            text={data?.type[1].toUpperCase()}
+            x={32}
+            y={120}
+            fontSize={35}
             fill="black"
             fontFamily="TimeNewRoman"
             fontStyle="bold"

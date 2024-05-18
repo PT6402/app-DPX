@@ -26,9 +26,10 @@ export default function ItemUser({ dataItem, type }) {
       number_of_people: dataItem?.number_of_people || "",
       type_car: dataItem["type_car(chỗ)"] || "",
       id: dataToId,
-      type: type?.replace("|", " "),
+      type: type,
       name_tai_xe: dataItem?.name_tai_xe,
       phone_tai_xe: dataItem?.phone_tai_xe,
+      vi_tri: dataItem["vi_tri(Xxx)"] || "",
     };
     addUserByThuKy(data);
   };
@@ -73,6 +74,9 @@ export default function ItemUser({ dataItem, type }) {
                       "chưa có"}
                   </p>
                 </li>
+                <li>
+                  <p>Vị trí: {dataItem["vi_tri(Xxx)"] || "chưa có"}</p>
+                </li>
               </ul>
             </div>
             <div className="bg-gray-300 h-1 w-full rounded-xl my-3"></div>
@@ -95,7 +99,8 @@ export default function ItemUser({ dataItem, type }) {
                   dataItem["time_leave_pagoda(dd-mm-yyyy|hh:mm)"] || ""
                 }
                 id={dataToId}
-                type={type?.split("|")[0]}
+                type={type?.split("|")}
+                vi_tri_dau={dataItem["vi_tri(Xxx)"] || ""}
               />
             </div>
           </div>

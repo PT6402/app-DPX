@@ -26,7 +26,7 @@ const useAdmin = () => {
       if (res.data.status == 200) {
         dispatch(updateInfo(res.data.data));
         if (res.data.data.Role == "admin") {
-          navigate("/ctn_dt");
+          navigate("/thu-ky");
         }
         if (res.data.data.Role == "super-admin") {
           navigate("/add_admin");

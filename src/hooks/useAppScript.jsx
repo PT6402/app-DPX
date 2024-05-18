@@ -129,6 +129,7 @@ const useAppScript = () => {
     type_car,
     number_of_people,
     time_leave_pagoda,
+    vi_tri,
   }) => {
     setIsLoadding(true);
     setIsError(null);
@@ -162,6 +163,9 @@ const useAppScript = () => {
       formData.append("time_leave_pagoda", time_leave_pagoda || "");
       formData.append("bien_so", bien_so || "");
       formData.append("type", type);
+      formData.append("vi_tri", vi_tri || "");
+      formData.append("status", "CHUA_VE");
+
       const addUser = await axios.post(urlServer, formData);
 
       if (addUser.data.status == 200) {

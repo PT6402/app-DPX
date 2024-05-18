@@ -5,6 +5,7 @@ import { DialogComponet, Loading } from "../../common";
 import Previous from "../../model/FormStep/common/Previous";
 import Next_Submit from "../../model/FormStep/common/Next_Submit";
 import HeaderStep from "../../model/FormStep/common/HeaderStep";
+import SumaryInfoImage from "../../pages/FormInforPage/SumaryInfoImage";
 
 export default function FormLayout() {
   const [isShow, setIsShow] = useState();
@@ -23,6 +24,7 @@ export default function FormLayout() {
   }, [isOpen]);
   return (
     <>
+      {/* <SumaryInfoImage /> */}
       <DialogComponet />
       <div className="relative flex flex-col flex-1">
         {isLoading && <Loading />}

@@ -5,6 +5,7 @@ import ItemUser from "./ItemUser";
 export default function ThuKy() {
   const dataExcel = useSelector((state) => state.excelSlice);
   const type = dataExcel.data?.name_DT_CTN;
+  console.log(dataExcel.data);
   return (
     <div>
       <Header />
