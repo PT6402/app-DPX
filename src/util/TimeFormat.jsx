@@ -38,4 +38,14 @@ function formatDateTime(datetimeString) {
 
   return formattedDateTime;
 }
-export { formatDateForInput, formatDateTime };
+
+const convertToDatetimeLocalFormat = (dateString) => {
+  if (dateString != "" || dateString != null) {
+    const [datePart, timePart] = dateString.split("|");
+    const [day, month, year] = datePart.split("-");
+    const [hours, minutes] = timePart.split(":");
+    return `${year}-${month}-${day}T${hours}:${minutes}`;
+  }
+  return null;
+};
+export { formatDateForInput, formatDateTime, convertToDatetimeLocalFormat };

@@ -7,6 +7,7 @@ import {
   FormInforPage,
   LoginPage,
   NotFoundPage,
+  ThuKy,
   VipPage,
 } from "./components/pages";
 import ProtectedRoute from "./routes/ProtectedRoute";
@@ -20,6 +21,7 @@ function App() {
           <Route index element={<LoginPage />} />
           <Route element={<ProtectedRoute needAdmin />}>
             <Route path="ctn_dt" element={<Ctn_dtPage />} />
+            <Route path="thu-ky" element={<ThuKy />} />
             <Route path="ctn_dt/:id/:phone/:name" element={<DetailPage />} />
             <Route path="vip" element={<VipPage />} />
           </Route>

@@ -6,6 +6,7 @@ import Ctn_dtPage from "./Ctn_dtPage";
 import DetailPage from "./Ctn_dtPage/DetailPage";
 import LoginPage from "./LoginPage";
 import AddAdminPage from "./AddAdminPage";
+import ThuKy from "./ThuKy";
 
 export {
   FormInforPage,
@@ -15,4 +16,5 @@ export {
   DetailPage,
   LoginPage,
   AddAdminPage,
+  ThuKy,
 };

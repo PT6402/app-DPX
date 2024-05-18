@@ -51,7 +51,18 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
               className="mb-6 flex flex-col gap-1.5"
               onClick={() => setSidebarOpen(false)}
             >
+              {" "}
               <li>
+                <NavLink
+                  to="/thu-ky"
+                  className={`group relative flex items-center gap-2.5 rounded-xl py-5 px-4 font-medium text-bodydark1 duration-300 ease-in-out  dark:hover:bg-meta-4 ${
+                    pathname.includes("thu-ky") && "bg-graydark dark:bg-meta-4"
+                  }`}
+                >
+                  Thư ký
+                </NavLink>
+              </li>
+              {/* <li>
                 <NavLink
                   to="/ctn_dt"
                   className={`group relative flex items-center gap-2.5 rounded-xl py-5 px-4 font-medium text-bodydark1 duration-300 ease-in-out dark:hover:bg-meta-4 ${
@@ -60,7 +71,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 >
                   CTN / ĐT
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink
                   to="/vip"

@@ -15,6 +15,7 @@ const Layout = () => {
       case "vip":
       case "ctn_dt":
       case "add_admin":
+      case "thu-ky":
         return <DashboardLayout />;
       case "user":
         return pathname.length == 3 && checkValidateUUID(pathname[2]) ? (
