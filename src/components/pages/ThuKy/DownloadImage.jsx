@@ -19,7 +19,7 @@ export default function DownloadImage({
   id,
 }) {
   const imageRef = useRef();
-  const qr_code = document.getElementById("my-qrcode");
+  const qr_code = document.getElementById("my-qrcode" + id);
   const urlID = `${import.meta.env.VITE_URL_APP}user/${id}`;
   const qrImg = qr_code?.toDataURL();
   const [imageDP] = useImage(logoDPX);
@@ -64,7 +64,7 @@ export default function DownloadImage({
       </button>
       <QRCodeCanvas
         value={urlID}
-        id="my-qrcode"
+        id={"my-qrcode" + id}
         size={250}
         includeMargin={true}
         level={"H"}

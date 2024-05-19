@@ -10,6 +10,7 @@ export default function ItemUser({ dataItem, type }) {
   const { handHash } = useUUID();
   const [dataToId, setDataToId] = useState(null);
   useEffect(() => {
+    console.log(dataItem?.name_truong_doan + dataItem?.phone_truong_doan);
     setDataToId(
       handHash(dataItem?.name_truong_doan + dataItem?.phone_truong_doan)
     );

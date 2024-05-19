@@ -35,7 +35,7 @@ export default function SumaryInfoImage() {
     const uri = imageRef.current.toDataURL();
     saveAs(uri);
   };
-  console.log(infoUser);
+  // console.log(infoUser);
   return (
     <div className="flex items-center justify-center">
       <button
