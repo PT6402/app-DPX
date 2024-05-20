@@ -164,7 +164,7 @@ const useAppScript = () => {
       formData.append("bien_so", bien_so || "");
       formData.append("type", type);
       formData.append("vi_tri", vi_tri || "");
-      formData.append("status", "CHUA_VE");
+      formData.append("status", "CHUA_DEN");
 
       const addUser = await axios.post(urlServer, formData);
 
